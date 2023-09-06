@@ -1,9 +1,8 @@
-#type: ignore
 import time
-import board
-import digitalio
+import board #type: ignore
+import digitalio #type: ignore
 
-led = digitalio.DigitalInOut(board.GP15)
+led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
 
 while True:
