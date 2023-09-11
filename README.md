@@ -30,6 +30,27 @@ This was a little bit tricky for a couple reasons. The first was that I ran into
 
 &nbsp;
 
+## Launchpad Part 2
+
+### Assignment Description
+
+The object of this assignment was to use circuitpython and a Pico to countdown from 10 to 0 (Liftoff) in the console and blink a red LED every second of the countdown and use a green LED to indicate liftoff.
+
+### Evidence 
+
+![Countdown](images/countdown_gif.gif)  
+
+### Wiring
+
+Not applicable to this assignment
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/launchpad_pt_1.py).
+### Reflection
+
+This was a little bit tricky for a couple reasons. The first was that I ran into multiple issues with importing the board, but what I know understand is that we aren't writing in python (which is what I thought), but instead **circuit python**. Once I understood this, the process became a lot clearer. Another problem I ran into was not actually knowing python. Luckily, my best friend google helped me very kindly with this issue.
+
+&nbsp;
 ## Onshape_Assignment_Template
 
 ### Assignment Description
