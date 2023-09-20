@@ -1,0 +1,54 @@
+import time
+import board #type: ignore
+import digitalio #type: ignore
+import pwmio #type: ignore
+from adafruit_motor import servo #type: ignore
+
+
+redLed = digitalio.DigitalInOut(board.GP17)
+redLed.direction = digitalio.Direction.OUTPUT
+greenLed = digitalio.DigitalInOut(board.GP16)
+greenLed.direction = digitalio.Direction.OUTPUT
+button = digitalio.DigitalInOut(board.GP0)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.DOWN
+pwm_servo = pwmio.PWMOut(board.GP18, duty_cycle=2 ** 15, frequency=50)
+servo1 = servo.Servo(pwm_servo, min_pulse=500, max_pulse=2500)
+angle=180
+finished=True
+timeout=time.monotonic() #set timeout to current time
+servo1.angle=180
+while True:
+    if button.value == True:
+        for i in range(10,0,-1): #decrement from 10 to 1 by one 
+            timeout=time.monotonic()+0.5 #set timeout to 0.5 seconds from now
+            print(i) #print current launchpad time
+            redLed.value=True #turn on red LED
+            while time.monotonic()<timeout: #makeshift time.sleep, it looks like this so that we can check during loop
+                if button.value == True and i !=10: #if button is pressed
+                    finished=False #set finished to incomplete
+                elif i<=3:
+                    for angle in range(angle,angle-20,-2): 
+                        servo1.angle=angle
+                        time.sleep(0.02)
+            redLed.value=False #turn off red LED
+            timeout=time.monotonic()+0.5 #set timeout to 0.5 seconds from ow
+            while time.monotonic()<timeout: #same loop as above, second half of blink
+                if button.value == True and i !=10:
+                    finished=False
+                elif i<=3:
+                    for angle in range(angle,angle-20,-2): 
+                        servo1.angle=angle
+                        time.sleep(0.02)
+            if i==1: #if loop finishes
+                finished=True #set loop to finished
+            if finished==False: #if loop incomplete
+                break #leave loop early
+        if finished==True: #if loop finished
+            print("LIFTOFF!") #print liftoff after countdown
+            while True:
+                greenLed.value=True #keep green LED on indefinitely
+        else: #if loop did not finish
+            print("Abort!") #say abort
+            while True: #keep red LED on indefinitely
+                redLed.value=True
