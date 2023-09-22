@@ -1,0 +1,17 @@
+import time
+import board #type: ignore
+import digitalio #type: ignore
+import adafruit_mpu6050 #type: ignore
+import busio #type: ignore
+
+sda_pin = board.GP14 #set pins for i2c
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+mpu = adafruit_mpu6050.MPU6050(i2c) #init MPU
+while True:
+    print(f"X acceleration: {round(mpu.acceleration[0],1)} m/s2") #print out acceleration values
+    print(f"Y acceleration: {round(mpu.acceleration[1],1)} m/s2")
+    print(f"Z acceleration: {round(mpu.acceleration[2],1)} m/s2")
+    print()
+    time.sleep(1)

@@ -97,6 +97,27 @@ The object of this assignment was to use circuitpython and a Pico to countdown f
 
 Once again, the main part of this assignment was not overly complicated, with the main complexity coming from the challenge of importing our own package. However, the spicty version of this assignment took considerably more thought. The way I did it was so sweep the servo with a for loop that slowly decrements the angle occurring during each "sleep" loop to decrement by a total of 180 degrees over the full time. I encountered an odd issue with decrementing in which the for loop would be hit way too many times, driving the angle to an impossible negative value. To counterract this problem, I added a variable to check whether or not the loop had already been hit. Although not a perfect solution, it worked for what I needed.
 &nbsp;
+## Launchpad_4
+
+
+### Assignment Description
+
+The object of this assignment was to use circuitpython, a Pico, and an accelerometr (MPU), to constantly update and display values for X, Y, and Z acceleration.
+
+### Evidence 
+
+![Countdown](images/accelo.gif)  
+
+### Wiring
+
+![Countdown](images/accelo_diagram.png)  
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/crash_avoidance_pt_1).
+### Reflection
+
+This assignment was the first time that we used an external board (the MPU) in conjunction with our Pico. This was surprisingly easy, but did take a couple times to get right because I forgot that it had to be wired to ground. Once I figured this out, the assignment fell into place, and I had some fun with fStrings to print some more complex strings.
+&nbsp;
 ## Onshape_Assignment_Template
 
 ### Assignment Description
