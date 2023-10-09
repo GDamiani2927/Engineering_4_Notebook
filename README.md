@@ -5,8 +5,8 @@
 ## Table of Contents
 * [Launchpad Part 1 (countdown)](#Launchpad_1)
 * [Launchpad Part 2 (blink)](#Launchpad_2)
-* [Launchpad Part 1 (countdown)](#Launchpad_3)
-* [Onshape_Assignment_Template](#onshape_assignment_template)
+* [Launchpad Part 3 (countdown)](#Launchpad_3)
+* [Launchpad Part 4 (countdown)](#Launchpad_4)
 
 &nbsp;
 
@@ -118,11 +118,33 @@ The object of this assignment was to use circuitpython, a Pico, and an accelerom
 
 This assignment was the first time that we used an external board (the MPU) in conjunction with our Pico. This was surprisingly easy, but did take a couple times to get right because I forgot that it had to be wired to ground. Once I figured this out, the assignment fell into place, and I had some fun with fStrings to print some more complex strings.
 &nbsp;
-## Beam
+## Beam #1
 
 ### Assignment Description
 
 The purpose of this assignment was to create a beam that can withstand enough weight and no flex or break. There were numerous requirements for this, including but not limited to a length to the hole of 180mm, less than 13 grams in total, and no overhangs.
+
+### Part Link 
+
+[Link to document](https://cvilleschools.onshape.com/documents/c407a01931b8eba03dec4159/w/43c6c11648628f76d52336ae/e/85621042ae551a6f13bf6ea8). 
+
+### Part Image
+
+![Beam](images/Beam Starter + Holder.png) 
+![Beam](images/Beam Starter + Holder (1).png)  
+
+### Reflection
+
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+
+&nbsp;
+
+&nbsp;
+## Beam #4
+
+### Assignment Description
+
+The purpose of this assignment was to improve our beam based on the results found from FEA (finite element analysis) so as to make it hold more weight than it did in previous simulations. The constraints of this were the same as they were in previous assignments, meaning that all changes had to comply to all of the same rules.
 
 ### Part Link 
 
