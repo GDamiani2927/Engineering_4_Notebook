@@ -3,10 +3,10 @@
 &nbsp;
 
 ## Table of Contents
-* [Launchpad Part 1 (countdown)](#Launchpad_1)
-* [Launchpad Part 2 (blink)](#Launchpad_2)
-* [Launchpad Part 3 (countdown)](#Launchpad_3)
-* [Launchpad Part 4 (countdown)](#Launchpad_4)
+* [Launchpad Part 1](#Launchpad_1)
+* [Launchpad Part 2](#Launchpad_2)
+* [Launchpad Part 3](#Launchpad_3)
+* [Launchpad Part 4](#Launchpad_4)
 
 &nbsp;
 
@@ -135,11 +135,30 @@ The purpose of this assignment was to create a beam that can withstand enough we
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+There were a lot of tricky constraints that made this assignment difficult. The hardest constraint was that we couldn't have an overhang of 45 degrees or more acute. Our first idea was a honeycomb structure but after we saw this constraint, we had to change our design. We tried to use circles but that also got vetoed because of the overhang. In the end, we used triangles which have good structural integrity and no overhangs. We didn't run into any problems with the weight of 13 grams unlike other teams did. We feel like we needed a better system to have both of us working on the document at the same time. Maybe it would have been better if we were side by side instead of across from each other.
 
 &nbsp;
 
+## Beam_3
+
+### Assignment Description
+
+The objective of this assignment was to simulate what would happen to our beam under 30N of pressure in an onshape simulation.
+
+### Part Link
+
+[Link to document](https://cvilleschools.onshape.com/documents/c407a01931b8eba03dec4159/w/43c6c11648628f76d52336ae/e/5e86bb4a23adabcf187f2e56).
+
+### Part Image
+
+![Beam_render1](images/Beam_render1.png) 
+
+### Reflection
+
+This assignment was straightforward but you could lose a lot of precious time if you clicked on the wrong thing. Before you run the simulation you need to make sure you have a face selected and not a point. If you select a point, your results will be too good to be true. Another thing is being aware of what you're doing when the simulation is running. The simulation takes an insane amount of time but if you click on another tab in onshape, it will reset the entire process. Make sure to set a good amount of time aside to render the effects of weight on your design.
+
 &nbsp;
+
 ## Beam #4
 
 ### Assignment Description
@@ -152,14 +171,15 @@ The purpose of this assignment was to improve our beam based on the results foun
 
 ### Part Image
 
-![Beam](images/Beam Starter + Holder.png) 
-![Beam](images/Beam Starter + Holder (1).png)  
+![Beam](images/model_raw.png) 
+![Beam](images/model_sim.png)  
 
 ### Reflection
 
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience? Your goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person. Think about your audience for this one, which may be "future you" (when you realize you need some of this code in three months), me, or your college admission committee!
+This assignment was the most time consuming yet, as trying to improve the structural integrity of the beam resulted in a massive increase in weight, surpassing the 13g restriction. To fit this constraint, I had to cut multiple holes which, in turn, decreased the integrity of the beam. This cycle of shortcomings continued again and again, until we realized that the biggest fault was right in the middle of the beam. Our solution was to slap on material from other parts of the build onto the middle, thickening the weakest points on the beam, resulting in a dramatic drop in displacement from roughly 85 all the way down to 16 millimeters at 30 N of force.
 
 &nbsp;
+
 
 ## Media Test
 
