@@ -7,6 +7,10 @@
 * [Launchpad Part 2](#Launchpad_2)
 * [Launchpad Part 3](#Launchpad_3)
 * [Launchpad Part 4](#Launchpad_4)
+* [Accelerometer](#Accelerometer)
+* [Beam Part 1](#Beam_1)
+* [Beam Part 3](#Beam_3)
+* [Beam Part 4](#Beam_4)
 
 &nbsp;
 
@@ -97,12 +101,36 @@ The object of this assignment was to use circuitpython and a Pico to countdown f
 
 Once again, the main part of this assignment was not overly complicated, with the main complexity coming from the challenge of importing our own package. However, the spicty version of this assignment took considerably more thought. The way I did it was so sweep the servo with a for loop that slowly decrements the angle occurring during each "sleep" loop to decrement by a total of 180 degrees over the full time. I encountered an odd issue with decrementing in which the for loop would be hit way too many times, driving the angle to an impossible negative value. To counterract this problem, I added a variable to check whether or not the loop had already been hit. Although not a perfect solution, it worked for what I needed.
 &nbsp;
-## Launchpad_4
+
+## Accelerometer
 
 
 ### Assignment Description
 
-The object of this assignment was to use circuitpython, a Pico, and an accelerometr (MPU), to constantly update and display values for X, Y, and Z acceleration.
+The object of this assignment was to use circuitpython, a Pico, and an accelerometer (MPU), to constantly update and display values for X, Y, and Z acceleration.
+
+### Evidence 
+
+![Countdown](images/accelo.gif)  
+
+### Wiring
+
+![Countdown](images/accelo_diagram.png)  
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/crash_avoidance_pt_1).
+### Reflection
+
+This assignment was the first time that we used an external board (the MPU) in conjunction with our Pico. This was surprisingly easy, but did take a couple times to get right because I forgot that it had to be wired to ground. Once I figured this out, the assignment fell into place, and I had some fun with fStrings to print some more complex strings. Althought I don't believe that this is an issue, it's interesting that the accelerometer doesn't read -10 (or something of the like) when at a netural position, instead displaying around -8. It seems unlikely that the error would be this high given how close it is to 0 in x an y whne not tilted, but this could be because of factory tolerance.
+
+&nbsp;
+
+## Light-And-Power
+
+
+### Assignment Description
+
+The object of this assignment was to use circuitpython, a Pico powered by an external power source, and an accelerometer (MPU), to constantly update and display values for X, Y, and Z acceleration and turn on an LED when the board is tilted more than a set treshold.
 
 ### Evidence 
 
@@ -117,8 +145,9 @@ The object of this assignment was to use circuitpython, a Pico, and an accelerom
 ### Reflection
 
 This assignment was the first time that we used an external board (the MPU) in conjunction with our Pico. This was surprisingly easy, but did take a couple times to get right because I forgot that it had to be wired to ground. Once I figured this out, the assignment fell into place, and I had some fun with fStrings to print some more complex strings.
+
 &nbsp;
-## Beam #1
+## Beam_1
 
 ### Assignment Description
 
@@ -151,7 +180,7 @@ The objective of this assignment was to simulate what would happen to our beam u
 
 ### Part Image
 
-![Beam_render1](images/Beam_render1.png) 
+![Beam_render1](images/beam_render_1.png) 
 
 ### Reflection
 
@@ -159,7 +188,7 @@ This assignment was straightforward but you could lose a lot of precious time if
 
 &nbsp;
 
-## Beam #4
+## Beam_4
 
 ### Assignment Description
 
@@ -179,15 +208,3 @@ The purpose of this assignment was to improve our beam based on the results foun
 This assignment was the most time consuming yet, as trying to improve the structural integrity of the beam resulted in a massive increase in weight, surpassing the 13g restriction. To fit this constraint, I had to cut multiple holes which, in turn, decreased the integrity of the beam. This cycle of shortcomings continued again and again, until we realized that the biggest fault was right in the middle of the beam. Our solution was to slap on material from other parts of the build onto the middle, thickening the weakest points on the beam, resulting in a dramatic drop in displacement from roughly 85 all the way down to 16 millimeters at 30 N of force.
 
 &nbsp;
-
-
-## Media Test
-
-Your readme will have various images and gifs on it. Upload a test image and test gif to make sure you've got the process figured out. Pick whatever image and gif you want!
-
-### Test Link
-[test.py](raspberry-pi/test.py)
-### Test Image
-![Burries](images/burries.jpg)  
-### Test GIF
-![Sisyphus](images/sisyphus.gif)  
