@@ -1,0 +1,26 @@
+import time
+import board #type: ignore
+import digitalio #type: ignore
+import adafruit_mpu6050 #type: ignore
+import busio #type: ignore
+
+redLed = digitalio.DigitalInOut(board.GP16)
+redLed.direction = digitalio.Direction.OUTPUT
+sda_pin = board.GP14 #set pins for i2c
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+timeout=time.monotonic() #set timeout to current time
+
+
+mpu = adafruit_mpu6050.MPU6050(i2c) #init MPU
+while True:
+    print(f"X acceleration: {round(mpu.acceleration[0],1)} m/s2") #print out acceleration values
+    print(f"Y acceleration: {round(mpu.acceleration[1],1)} m/s2")
+    print(f"Z acceleration: {round(mpu.acceleration[2],1)} m/s2")
+    print()
+    timeout=time.monotonic()+1 #set timeout to 0.5 seconds from now
+    while time.monotonic()<timeout: #makeshift time.sleep, it looks like this so that we can check during loop
+        if abs(mpu.acceleration[0]) >= 8.5 or abs(mpu.acceleration[1]) >=8.5: #if board is tilted
+            redLed.value=True #turn on light
+        else:
+            redLed.value=False #otherwise do not
