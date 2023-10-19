@@ -7,7 +7,8 @@
 * [Launchpad Part 2](#Launchpad_2)
 * [Launchpad Part 3](#Launchpad_3)
 * [Launchpad Part 4](#Launchpad_4)
-* [Accelerometer](#Accelerometer)
+* [Crash Avoidance Part 1](#Accelerometer)
+* [Crash Avoidance Part 2](#Light-And-Power)
 * [Beam Part 1](#Beam_1)
 * [Beam Part 3](#Beam_3)
 * [Beam Part 4](#Beam_4)
@@ -134,11 +135,11 @@ The object of this assignment was to use circuitpython, a Pico powered by an ext
 
 ### Evidence 
 
-![Countdown](images/accelo.gif)  
+![Countdown](images/tilting.gif)  
 
 ### Wiring
 
-![Countdown](images/accelo_diagram.png)  
+![Countdown](images/tilt_diagram_upload.png)  
 
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/crash_avoidance_pt_1).
