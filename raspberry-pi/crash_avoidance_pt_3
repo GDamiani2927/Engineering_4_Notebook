@@ -7,20 +7,37 @@ from adafruit_display_text import label #type: ignore
 import adafruit_displayio_ssd1306 #type: ignore
 import terminalio #type: ignore
 import displayio #type: ignore
-
 displayio.release_displays()
-display_bus = displayio.I2CDisplay(i2c, device_address=your-address-here, reset=board.your-pin-here)
-
-redLed = digitalio.DigitalInOut(board.GP16)
-redLed.direction = digitalio.Direction.OUTPUT
 sda_pin = board.GP14 #set pins for i2c
 scl_pin = board.GP15
 i2c = busio.I2C(scl_pin, sda_pin)
+
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #initialize adresses for i2c
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+
+redLed = digitalio.DigitalInOut(board.GP16)
+redLed.direction = digitalio.Direction.OUTPUT
 timeout=time.monotonic() #set timeout to current time
 
 
-mpu = adafruit_mpu6050.MPU6050(i2c) #init MPU
+mpu = adafruit_mpu6050.MPU6050(i2c, address=0x68)
+
+splash = displayio.Group()
+
+# add title block to display group
+title = "ANGULAR VELOCITY"
+# the order of this command is (font, text, text color, and location)
+text_area = label.Label(terminalio.FONT, text=title, color=0xFFFF00, x=5, y=5)
+splash.append(text_area)    
+
+# you will write more code here that prints the x, y, and z angular velocity values to the screen below the title. Use f strings!
+# Don't forget to round the angular velocity values to three decimal places
+
+# send display group to screen
+display.show(splash)
 while True:
+    mpu.gyro
+    text_area.text = f"X acc: {round(mpu.acceleration[0],1)} m/s2 \nY acc: {round(mpu.acceleration[1],1)} m/s2 \nZ acc: {round(mpu.acceleration[2],1)} m/s2"
     print(f"X acceleration: {round(mpu.acceleration[0],1)} m/s2") #print out acceleration values
     print(f"Y acceleration: {round(mpu.acceleration[1],1)} m/s2")
     print(f"Z acceleration: {round(mpu.acceleration[2],1)} m/s2")
