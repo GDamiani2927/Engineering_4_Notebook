@@ -9,6 +9,7 @@
 * [Launchpad Part 4](#Launchpad_4)
 * [Crash Avoidance Part 1](#Accelerometer)
 * [Crash Avoidance Part 2](#Light-And-Power)
+* [Crash Avoidance Part 3](#OLED_Screen)
 * [Beam Part 1](#Beam_1)
 * [Beam Part 3](#Beam_3)
 * [Beam Part 4](#Beam_4)
@@ -157,11 +158,11 @@ The object of this assignment was to use circuitpython, a Pico powered by an ext
 
 ### Evidence 
 
-![Countdown](images/tilting.gif)  
+![Countdown](images/OLED.gif)  
 
 ### Wiring
 
-![Countdown](images/tilt_diagram_upload.png)  
+![Countdown](images/OLED_battery_diagram.png)  
 
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/crash_avoidance_pt_3).
