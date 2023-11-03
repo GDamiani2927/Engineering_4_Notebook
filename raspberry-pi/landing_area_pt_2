@@ -1,0 +1,85 @@
+#type: ignore
+import time
+from adafruit_display_shapes.triangle import Triangle
+from adafruit_display_shapes.line import Line
+from adafruit_display_shapes.circle import Circle
+import board #type: ignore
+import busio #type: ignore
+from adafruit_display_text import label #type: ignore
+import adafruit_displayio_ssd1306 #type: ignore
+import terminalio #type: ignore
+import displayio #type: ignore
+
+displayio.release_displays()
+sda_pin = board.GP14 #set pins for i2c
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+display_bus = displayio.I2CDisplay(i2c, device_address=0x3d, reset=board.GP13) #initialize adresses for i2c
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+splash = displayio.Group()
+# the order of this command is (font, text, text color, and location) 
+display.show(splash) 
+txts=[]
+txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=5))
+txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=18))
+txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=31))
+txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=44))
+splash.append(txts[0])
+splash.append(txts[1])
+splash.append(txts[2])
+splash.append(txts[3])
+pointList=[]
+def clearDisplay(start,end):
+    for i in range(start,end):
+        txts[i].text = ""
+def inToOut():
+    pointList[0]+=64
+    pointList[1]=abs(pointList[1]-32)
+    pointList[2]+=64
+    pointList[3]=abs(pointList[3]-32)
+    pointList[4]+=64
+    pointList[5]=abs(pointList[5]-32)
+def askAndAppend(iter):
+    finished=False
+    while(not finished):
+        print(f'Enter point {iter}:')
+        if(iter!=3):
+            txts[iter*2-2].text = f"Enter point {iter}:"
+        else:
+            clearDisplay(1,3)
+            txts[0].text = f"Enter point {iter}:"
+            txts[3].text = ""
+        p=input()
+        try:
+            pointList.append(float(p.split(",")[0]))
+            pointList.append(float(p.split(",")[1]))
+            if(iter!=3):
+                txts[iter*2-1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}"
+            else:
+                txts[1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}"
+            finished=True
+        except:
+            print('Incorrect syntax. Try again and ensure that x and y are real numbers and that format is x,y')
+def triCalc(points):
+    return 0.5*abs((points[0]*(points[3]-points[5]))+(points[2]*(points[5]-points[1]))+points[4]*(points[1]-points[3]))
+    
+askAndAppend(1)
+while(True):
+    askAndAppend(2)
+    askAndAppend(3)
+    print(f"The area of the triangle with vertices ({pointList[0]},{pointList[1]}), ({pointList[2]},{pointList[3]}), ({pointList[4]},{pointList[5]}) is {triCalc(pointList)} square km")
+    clearDisplay(0,3)
+    txts[0].text = f"{triCalc(pointList)} km2"
+    inToOut()
+    hlineY = Line(64,0,64,64, color=0xFFFF00)
+    splash.append(hlineY)
+    hlineX = Line(0,32,128,32, color=0xFFFF00)
+    splash.append(hlineX)
+    center = Circle(64, 32, 2, outline=0xFFFF00)
+    splash.append(center)
+    triangle = Triangle(int(pointList[0]),int(pointList[1]),int(pointList[2]),int(pointList[3]),int(pointList[4]),int(pointList[5]), outline=0xFFFF00)
+    splash.append(triangle)
+    clearDisplay(0,3)
+    pointList=[]
+    askAndAppend(1)
