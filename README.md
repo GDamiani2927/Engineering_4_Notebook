@@ -9,6 +9,7 @@
 * [Launchpad Part 4](#Launchpad_4)
 * [Crash Avoidance Part 1](#Accelerometer)
 * [Crash Avoidance Part 2](#Light-And-Power)
+* [Crash Avoidance Part 3](#OLED_Screen)
 * [Beam Part 1](#Beam_1)
 * [Beam Part 3](#Beam_3)
 * [Beam Part 4](#Beam_4)
@@ -146,6 +147,28 @@ The object of this assignment was to use circuitpython, a Pico powered by an ext
 ### Reflection
 
 This assignment was the first time that we used an external board (the MPU) in conjunction with our Pico. This was surprisingly easy, but did take a couple times to get right because I forgot that it had to be wired to ground. Once I figured this out, the assignment fell into place, and I had some fun with fStrings to print some more complex strings.
+
+&nbsp;
+## OLED_Screen
+
+
+### Assignment Description
+
+The object of this assignment was to use circuitpython, a Pico powered by an external power source, and an accelerometer (MPU), to constantly update and display values for X, Y, and Z acceleration on an OLED screen and turn on an LED when the board is tilted more than a set treshold.
+
+### Evidence 
+
+![Countdown](images/OLED.gif)  
+
+### Wiring
+
+![Countdown](images/OLED_battery_diagram.png)  
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/crash_avoidance_pt_3).
+### Reflection
+
+This assignment was frusturating at times because of the I2C adressing complexity. Finding the addressing itself was easy, but implementing the code and integrating it with the pre-existing lines was difficult because everything now had depndencies of some sort, meaning the order was crucial. I've had some experience with I2C, but have never dealt with manually adressing them, which was an interesting challenge. Once I understood this, the next hurdle was wiring. This assignment was an exercise in READING THE ASSIGNMENT, as I was stuck for at least 10 minutes because I hadn't wired the RST to any pin.
 
 &nbsp;
 ## Beam_1
