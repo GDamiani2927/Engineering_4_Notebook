@@ -232,3 +232,26 @@ The purpose of this assignment was to improve our beam based on the results foun
 This assignment was the most time consuming yet, as trying to improve the structural integrity of the beam resulted in a massive increase in weight, surpassing the 13g restriction. To fit this constraint, I had to cut multiple holes which, in turn, decreased the integrity of the beam. This cycle of shortcomings continued again and again, until we realized that the biggest fault was right in the middle of the beam. Our solution was to slap on material from other parts of the build onto the middle, thickening the weakest points on the beam, resulting in a dramatic drop in displacement from roughly 85 all the way down to 16 millimeters at 30 N of force.
 
 &nbsp;
+
+## Landing_Area_Pt_1
+
+
+### Assignment Description
+
+The object of this assignment was to use python to calculate the area of a triangle give three points on a cartesian coordinate planes. This had to be completed through the use of functions and, as an added level, it has to be able to detect if the user inputs bad data not in the x,y format.
+
+### Evidence 
+
+![Countdown](Placeholder)  
+
+### Wiring
+
+No wiring diagram needed for this assignment
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/landing_area_pt_1).
+### Reflection
+
+This assignment was a good refreseher on how to use functioins in python, as it had been about five years since I had last done so when I was first learning how to code. I found the structure much more agreeable than that of Java or C++, as it flows much better visually, more like english. The meat and potatoes of this assignment was the input from the user and handling it to confirm it is in the right format. To achieve this, I ended up doing a completely seperate function just to take the input and process it. This allowed me to receive user input and process it in only three lines, calling the function once for each point and them putting those processed points into the simple function to output area.
+
+&nbsp;
