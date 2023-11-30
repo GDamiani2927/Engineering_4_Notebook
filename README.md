@@ -238,7 +238,7 @@ This assignment was the most time consuming yet, as trying to improve the struct
 
 ### Assignment Description
 
-The object of this assignment was to use python to calculate the area of a triangle give three points on a cartesian coordinate planes. This had to be completed through the use of functions and, as an added level, it has to be able to detect if the user inputs bad data not in the x,y format.
+The object of this assignment was to use python to calculate the area of a triangle given three points on a cartesian coordinate planes. This had to be completed through the use of functions and, as an added level, it has to be able to detect if the user inputs bad data not in the x,y format.
 
 ### Evidence 
 
@@ -253,5 +253,28 @@ No wiring diagram needed for this assignment
 ### Reflection
 
 This assignment was a good refreseher on how to use functioins in python, as it had been about five years since I had last done so when I was first learning how to code. I found the structure much more agreeable than that of Java or C++, as it flows much better visually, more like english. The meat and potatoes of this assignment was the input from the user and handling it to confirm it is in the right format. To achieve this, I ended up doing a completely seperate function just to take the input and process it. This allowed me to receive user input and process it in only three lines, calling the function once for each point and them putting those processed points into the simple function to output area.
+
+&nbsp;
+
+## Landing_Area_Pt_2
+
+
+### Assignment Description
+
+The object of this assignment was to use python to calculate the area of a triangle given three points and then plot them on and OLED screen, connecting them with a triangle. The program must then ask for the next set of coordinates and repeat the cycle.
+
+### Evidence 
+
+![Countdown](Placeholder)  
+
+### Wiring
+
+![OLED](images/oled_alone.png)
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/landing_area_pt_2).
+### Reflection
+
+This assignment was surprisingly difficult, given that we had already worked with OLED screens. My first issue with it was the coordinate shift, as the OLED and input use a different plane shift, so adjusting for that is crucial. In hindsight I should have just taken the time to write it down and visualize it instead of spending half an hour trying and failing to guess it correctly, but my function did work out in the end. The other issue I ran into was with wiring, as for 20 minutes I had SCL and SDA switched, yet was only looking at issues in my code. This resulted in my OLED showing static for the entire time, but I was able to switch the wiring based on previous documentation
 
 &nbsp;
