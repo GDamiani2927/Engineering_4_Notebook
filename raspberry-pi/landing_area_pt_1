@@ -1,18 +1,18 @@
 pointList=[]
 def askAndAppend(iter):
     finished=False
-    while(not finished):
+    while(not finished): #while the user has not finished inputting info (correctly)
         print(f'Enter point {iter}:')
         p=input()
-        try:
+        try: #try to add the inputed data, if not in a usable format...
             pointList.append(float(p.split(",")[0]))
             pointList.append(float(p.split(",")[1]))
             finished=True
-        except:
+        except: #ask again and repeat loop
             print('Incorrect syntax. Try again and ensure that x and y are real numbers and that format is x,y')
 def triCalc(points):
-    return abs(0.5*(points[0]*(points[3]-points[5])+points[2]*(points[5]-points[1])+points[4]*(points[1]-points[3])))
-askAndAppend(1)
+    return abs(0.5*(points[0]*(points[3]-points[5])+points[2]*(points[5]-points[1])+points[4]*(points[1]-points[3]))) #fancy equation for area given three coordinate pairs
+askAndAppend(1) #ask for first, second, and third coordinates
 askAndAppend(2)
 askAndAppend(3)
-print(f"The area of the triangle with vertices ({pointList[0]},{pointList[1]}), ({pointList[2]},{pointList[3]}), ({pointList[4]},{pointList[5]}) is {triCalc(pointList)} square km")
+print(f"The area of the triangle with vertices ({pointList[0]},{pointList[1]}), ({pointList[2]},{pointList[3]}), ({pointList[4]},{pointList[5]}) is {triCalc(pointList)} square km") #return answer

@@ -21,65 +21,65 @@ splash = displayio.Group()
 # the order of this command is (font, text, text color, and location) 
 display.show(splash) 
 txts=[]
-txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=5))
+txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=5)) #create lines for text entry. This is only here because I wanted to try it, far from the cleanest way to do this
 txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=18))
 txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=31))
 txts.append(label.Label(terminalio.FONT, text="", color=0xFFFF00, x=5, y=44))
-splash.append(txts[0])
+splash.append(txts[0]) #add blank spaces to each text area
 splash.append(txts[1])
 splash.append(txts[2])
 splash.append(txts[3])
 pointList=[]
-def clearDisplay(start,end):
+def clearDisplay(start,end): #simple function to clear the entire screen
     for i in range(start,end):
         txts[i].text = ""
-def inToOut():
+def inToOut(): #convert input coordinate plane to output coordinate plane
     pointList[0]+=64
     pointList[1]=abs(pointList[1]-32)
     pointList[2]+=64
     pointList[3]=abs(pointList[3]-32)
     pointList[4]+=64
     pointList[5]=abs(pointList[5]-32)
-def askAndAppend(iter):
+def askAndAppend(iter): #method to get input
     finished=False
-    while(not finished):
-        print(f'Enter point {iter}:')
-        if(iter!=3):
+    while(not finished): #while the data is not fully inputted
+        print(f'Enter point {iter}:') 
+        if(iter!=3): #Ask for points on the correct line of the OLED screen. Again, DO NOT use this method, I just wanted to try it out. It hurts to write this
             txts[iter*2-2].text = f"Enter point {iter}:"
         else:
             clearDisplay(1,3)
             txts[0].text = f"Enter point {iter}:"
             txts[3].text = ""
-        p=input()
-        try:
+        p=input() #set p to the inputed coordinates
+        try: #try and parse coordinates
             pointList.append(float(p.split(",")[0]))
             pointList.append(float(p.split(",")[1]))
-            if(iter!=3):
-                txts[iter*2-1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}"
+            if(iter!=3): #if not on the third line (the line that would be off the screen)
+                txts[iter*2-1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}" #set text to first or second coordinate
             else:
-                txts[1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}"
+                txts[1].text = f"{pointList[iter*2-2]},{pointList[iter*2-1]}" #set text to third coordinate
             finished=True
         except:
-            print('Incorrect syntax. Try again and ensure that x and y are real numbers and that format is x,y')
+            print('Incorrect syntax. Try again and ensure that x and y are real numbers and that format is x,y') #try again if inputted incorrectly
 def triCalc(points):
-    return 0.5*abs((points[0]*(points[3]-points[5]))+(points[2]*(points[5]-points[1]))+points[4]*(points[1]-points[3]))
+    return 0.5*abs((points[0]*(points[3]-points[5]))+(points[2]*(points[5]-points[1]))+points[4]*(points[1]-points[3])) #fancy formula to get the area from three points
     
-askAndAppend(1)
-while(True):
-    askAndAppend(2)
+askAndAppend(1) #start off with asking for first coord
+while(True): #method to keep repeating
+    askAndAppend(2) 
     askAndAppend(3)
     print(f"The area of the triangle with vertices ({pointList[0]},{pointList[1]}), ({pointList[2]},{pointList[3]}), ({pointList[4]},{pointList[5]}) is {triCalc(pointList)} square km")
     clearDisplay(0,3)
     txts[0].text = f"{triCalc(pointList)} km2"
-    inToOut()
-    hlineY = Line(64,0,64,64, color=0xFFFF00)
+    inToOut() #call method to shift all points to appropriate format for the OLED
+    hlineY = Line(64,0,64,64, color=0xFFFF00) #draw the Y axis
     splash.append(hlineY)
-    hlineX = Line(0,32,128,32, color=0xFFFF00)
+    hlineX = Line(0,32,128,32, color=0xFFFF00) #draw the X axis
     splash.append(hlineX)
-    center = Circle(64, 32, 2, outline=0xFFFF00)
+    center = Circle(64, 32, 2, outline=0xFFFF00) #draw the dot to indicate (0,0)
     splash.append(center)
-    triangle = Triangle(int(pointList[0]),int(pointList[1]),int(pointList[2]),int(pointList[3]),int(pointList[4]),int(pointList[5]), outline=0xFFFF00)
+    triangle = Triangle(int(pointList[0]),int(pointList[1]),int(pointList[2]),int(pointList[3]),int(pointList[4]),int(pointList[5]), outline=0xFFFF00) #draw the triangle
     splash.append(triangle)
-    clearDisplay(0,3)
-    pointList=[]
-    askAndAppend(1)
+    clearDisplay(0,3) #clear all text areas to start questioning again
+    pointList=[] #clear list of points
+    askAndAppend(1) #ask for new first coordinate 
