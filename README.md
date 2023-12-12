@@ -10,9 +10,11 @@
 * [Crash Avoidance Part 1](#Accelerometer)
 * [Crash Avoidance Part 2](#Light-And-Power)
 * [Crash Avoidance Part 3](#OLED_Screen)
-* [Beam Part 1](#Beam_1)
+* [Beam Part 1](#Beam_1)   
 * [Beam Part 3](#Beam_3)
 * [Beam Part 4](#Beam_4)
+* [Landing Area Part 1](#Landing_Area_Pt_1)
+* [Landing Area Part 2](#Landing_Area_Pt_2)
 
 &nbsp;
 
