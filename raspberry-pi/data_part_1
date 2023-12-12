@@ -1,0 +1,40 @@
+import time
+import board #type: ignore
+import digitalio #type: ignore
+import adafruit_mpu6050 #type: ignore
+import busio #type: ignore
+import displayio #type: ignore
+sda_pin = board.GP14 #set pins for i2c
+scl_pin = board.GP15
+i2c = busio.I2C(scl_pin, sda_pin)
+
+
+redLed = digitalio.DigitalInOut(board.GP16)
+redLed.direction = digitalio.Direction.OUTPUT
+timeout=time.monotonic() #set timeout to current time
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+
+mpu = adafruit_mpu6050.MPU6050(i2c)
+
+with open("/data.csv", "a") as datalog:
+    while True:
+        mpu.gyro
+        t=time.monotonic()
+        x=mpu.acceleration[0]
+        y=mpu.acceleration[1]
+        z=mpu.acceleration[2]
+        if abs(mpu.acceleration[0]) >= 8.5 or abs(mpu.acceleration[1]) >=8.5: #if board is tilted
+            tilt=1
+        else:
+            tilt=0
+        datalog.write(f"{t},{x},{y},{z},{tilt}\n")
+        if(tilt is 1):
+            redLed.value=True
+        else:
+            redLed.value=False
+        led.value = True
+        time.sleep(0.1)
+        led.value = False
+        datalog.flush()
+        time.sleep(0.25)
