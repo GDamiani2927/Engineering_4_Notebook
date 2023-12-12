@@ -242,7 +242,7 @@ The object of this assignment was to use python to calculate the area of a trian
 
 ### Evidence 
 
-![Countdown](Placeholder)  
+![Areas](images/areas.gif)  
 
 ### Wiring
 
@@ -265,7 +265,7 @@ The object of this assignment was to use python to calculate the area of a trian
 
 ### Evidence 
 
-![Countdown](Placeholder)  
+![Triangles](images/triangles.gif)  
 
 ### Wiring
 
@@ -275,6 +275,6 @@ The object of this assignment was to use python to calculate the area of a trian
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/landing_area_pt_2).
 ### Reflection
 
-This assignment was surprisingly difficult, given that we had already worked with OLED screens. My first issue with it was the coordinate shift, as the OLED and input use a different plane shift, so adjusting for that is crucial. In hindsight I should have just taken the time to write it down and visualize it instead of spending half an hour trying and failing to guess it correctly, but my function did work out in the end. The other issue I ran into was with wiring, as for 20 minutes I had SCL and SDA switched, yet was only looking at issues in my code. This resulted in my OLED showing static for the entire time, but I was able to switch the wiring based on previous documentation
+This assignment was surprisingly difficult, given that we had already worked with OLED screens. My first issue with it was the coordinate shift, as the OLED and input use a different plane shift, so adjusting for that is crucial. In hindsight I should have just taken the time to write it down and visualize it instead of spending half an hour trying and failing to guess it correctly, but my function did work out in the end. The other issue I ran into was with wiring, as for 20 minutes I had SCL and SDA switched, yet was only looking at issues in my code. This resulted in my OLED showing static for the entire time, but I was able to switch the wiring based on previous documentation.
 
 &nbsp;
