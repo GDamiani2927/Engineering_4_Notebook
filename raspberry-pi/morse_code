@@ -19,11 +19,14 @@ MORSE_CODE = { 'A':'.-', 'B':'-...',
     '?':'..--..', '/':'-..-.', '-':'-....-',
     '(':'-.--.', ')':'-.--.-'}
 while True:
-    print("Enter your message, or enter -q to quit:")
-    msg=input()
-    msg.split(" ")
-    for word in msg:
-        if (word != " "):
-            print(MORSE_CODE[word.upper()], end = " ")
-        else:
-            print("/", end = " ")
+    print("Enter your message, or enter -q to quit:") #prompt user for input
+    msg=input() #assign variable msg to the user input
+    if msg is "-q":
+        break
+    msg.split(" ") #split based on spaces
+    for word in msg: #iterate through every word
+        if (word != " "): #if the word is not whitespace
+            print(MORSE_CODE[word.upper()], end = " ")  #print out the corresponding morse code value with a space afterwards
+        else: #if the word is whitespace
+            print("/", end = " ") #print out a slash followed by a space
+print("Program Terminated")
