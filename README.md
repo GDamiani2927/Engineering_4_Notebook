@@ -323,6 +323,6 @@ The object of this assignment was to use python to take a user inputted string a
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/morse_code_2).
 ### Reflection
-When I originally did this assignment, my goal was to complete this assingment in as few lines of code as possible, as it seemed easy enough that I could do it without much difficulty. However, I quickly realized that i was sacrificing readibility for brevity, in other words the code was unintelligible. To remedy this, I made the decision to increase the length of my code and so too the clearness of the program. This was a valuable lesson, therefore, in the importance of readable code, as although it is slightly longer the code does the assignment just as well and can now be understood by all.
+This assignment, although a natural progression of the last one was a big step up in difficulty. What it took me a while to realize is that now the program had to parse through every single character **of each character**. The most obvious solution was thereofre to compile all the characters into an array, which also allowed me to add in a character that indicated spaces between each letter, as that space has to be accounted for as well. Beyond that, it was simply a matter of using a function to speed up the process of deciding what the LED should do. This assignment served as a good way to visualize the connection between abstract data such as that in the serial monitor and real world changes, in this case the state of an LED.
 
 &nbsp;
