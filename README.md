@@ -16,6 +16,7 @@
 * [Landing Area Part 1](#Landing_Area_Pt_1)
 * [Landing Area Part 2](#Landing_Area_Pt_2)
 * [Morse_Code_1](#Morse_Code_1)
+* [Morse_Code_2](#Morse_Code_2)
 
 &nbsp;
 
@@ -302,5 +303,26 @@ No wiring diagram needed for this assignment
 ### Reflection
 When I originally did this assignment, my goal was to complete this assingment in as few lines of code as possible, as it seemed easy enough that I could do it without much difficulty. However, I quickly realized that i was sacrificing readibility for brevity, in other words the code was unintelligible. To remedy this, I made the decision to increase the length of my code and so too the clearness of the program. This was a valuable lesson, therefore, in the importance of readable code, as although it is slightly longer the code does the assignment just as well and can now be understood by all.
 
+&nbsp;
+
+## Morse_Code_2
+
+
+### Assignment Description
+
+The object of this assignment was to use python to take a user inputted string and then output the string converted into morse code. The outputted code then is transmitted by a blinking LED.
+
+### Evidence 
+
+![Translation](images/morse_code_gif.gif)  
+
+### Wiring
+
+![LED](single_led.png)
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/morse_code_2).
+### Reflection
+When I originally did this assignment, my goal was to complete this assingment in as few lines of code as possible, as it seemed easy enough that I could do it without much difficulty. However, I quickly realized that i was sacrificing readibility for brevity, in other words the code was unintelligible. To remedy this, I made the decision to increase the length of my code and so too the clearness of the program. This was a valuable lesson, therefore, in the importance of readable code, as although it is slightly longer the code does the assignment just as well and can now be understood by all.
 
 &nbsp;
