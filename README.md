@@ -318,7 +318,7 @@ The object of this assignment was to use python to take a user inputted string a
 
 ### Wiring
 
-![LED](single_led.png)
+![LED](images/single_led.png)
 
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/morse_code_2).
