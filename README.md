@@ -17,6 +17,7 @@
 * [Landing Area Part 2](#Landing_Area_Pt_2)
 * [Morse_Code_1](#Morse_Code_1)
 * [Morse_Code_2](#Morse_Code_2)
+* [Data_Storage_1](#Data_Storage_1)
 
 &nbsp;
 
@@ -324,5 +325,25 @@ The object of this assignment was to use python to take a user inputted string a
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/morse_code_2).
 ### Reflection
 This assignment, although a natural progression of the last one was a big step up in difficulty. What it took me a while to realize is that now the program had to parse through every single character **of each character**. The most obvious solution was thereofre to compile all the characters into an array, which also allowed me to add in a character that indicated spaces between each letter, as that space has to be accounted for as well. Beyond that, it was simply a matter of using a function to speed up the process of deciding what the LED should do. This assignment served as a good way to visualize the connection between abstract data such as that in the serial monitor and real world changes, in this case the state of an LED.
+
+&nbsp;
+
+## Data_Storage_1
+
+
+### Assignment Description
+
+The object of this assignment was to use a PiCO board to collect and store accelerometer data to later be accessed once the PiCO is retrieved.
+
+### Evidence 
+
+### Wiring
+
+![Storage_Diagram](images/storage_diagram.png)
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/data_part_1).
+### Reflection
+
 
 &nbsp;
