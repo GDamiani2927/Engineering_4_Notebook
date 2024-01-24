@@ -338,6 +338,7 @@ The object of this assignment was to use a PiCO board to collect and store accel
 
 ### Evidence 
 ![Data 1](images/data_1.png)
+
 CSV of acceleration values
 ### Wiring
 
@@ -346,7 +347,7 @@ CSV of acceleration values
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/data_part_1).
 ### Reflection
-
+The main portion of this assignment, the code, was not very difficult as much of it was just following the outline for exporting to a CSV. That being said, understanding what each part of the code really did took more time, as I had never previously worked with CSV files, not to mention within python. The part of this assignment that took the longest for me to complete, however, was actually the switch to switch between data and programming mode. Not only was the concept itself of an entirely seperate mode just for storage daunting and slightly hard to understand, the boot.py file at first did not work for me. Fixing this involved swapping out for an entirely new PiCo, my last resort solution.
 
 &nbsp;
 
@@ -369,6 +370,6 @@ The object of this assignment was to use the data collected in Data Storage 1 an
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/data_part_1).
 
 ### Reflection
-
+This assignment was manageable, and was a nice break from the, dare I say, monotony of VS Code. I have some experience with google sheets, especially in science classes when data collection and organization is commonplace, which made this assignment significantly easier to do. My original CSV had some odd (orders of magnitude higher) outliers in the data, so I chose to surpress those so as to make the scale of the graph decipherable. This knowledge of working with CSVs will definitely come in handy when delaing when the data gathered from the Pi in the Sky project.
 
 &nbsp;
