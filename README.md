@@ -18,6 +18,7 @@
 * [Morse_Code_1](#Morse_Code_1)
 * [Morse_Code_2](#Morse_Code_2)
 * [Data_Storage_1](#Data_Storage_1)
+* [Data_Storage 2](#Data_Storage_2)
 
 &nbsp;
 
@@ -336,6 +337,28 @@ This assignment, although a natural progression of the last one was a big step u
 The object of this assignment was to use a PiCO board to collect and store accelerometer data to later be accessed once the PiCO is retrieved.
 
 ### Evidence 
+![Data 1](images/data_1.png)
+### Wiring
+
+![Storage_Diagram](images/storage_diagram.png)
+
+### Code
+[Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/data_part_1).
+### Reflection
+
+
+&nbsp;
+
+## Data_Storage_2
+
+
+### Assignment Description
+
+The object of this assignment was to use the data collected in Data Storage 1 and organize it into readable data in the form of charts.
+
+### Evidence 
+![Data 2](images/data_2_bars.png)
+![Data 2](images/data_2_lines.png)
 
 ### Wiring
 
@@ -343,6 +366,7 @@ The object of this assignment was to use a PiCO board to collect and store accel
 
 ### Code
 [Link to code](https://github.com/GDamiani2927/Engineering_4_Notebook/blob/main/raspberry-pi/data_part_1).
+
 ### Reflection
 
 
