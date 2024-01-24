@@ -9,32 +9,32 @@ scl_pin = board.GP15
 i2c = busio.I2C(scl_pin, sda_pin)
 
 
-redLed = digitalio.DigitalInOut(board.GP16)
-redLed.direction = digitalio.Direction.OUTPUT
+redLed = digitalio.DigitalInOut(board.GP16) #declare pin for LED
+redLed.direction = digitalio.Direction.OUTPUT 
 timeout=time.monotonic() #set timeout to current time
-led = digitalio.DigitalInOut(board.LED)
+led = digitalio.DigitalInOut(board.LED) #initialize onboard LED
 led.direction = digitalio.Direction.OUTPUT
 
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
-with open("/data.csv", "a") as datalog:
-    while True:
-        mpu.gyro
-        t=time.monotonic()
-        x=mpu.acceleration[0]
-        y=mpu.acceleration[1]
-        z=mpu.acceleration[2]
-        if abs(mpu.acceleration[0]) >= 8.5 or abs(mpu.acceleration[1]) >=8.5: #if board is tilted
-            tilt=1
-        else:
-            tilt=0
-        datalog.write(f"{t},{x},{y},{z},{tilt}\n")
-        if(tilt is 1):
-            redLed.value=True
-        else:
+with open("/data.csv", "a") as datalog: #open CSV file
+    while True: #loop
+        mpu.gyro 
+        t=time.monotonic() #record time
+        x=mpu.acceleration[0] #declare x acceleration
+        y=mpu.acceleration[1] #declare y acceleration
+        z=mpu.acceleration[2] #declare z accleration
+        if abs(mpu.acceleration[0]) >= 8.5 or abs(mpu.acceleration[1]) >=8.5: #if board is tilted in X or Y
+            tilt=1 #set tilt to 1
+        else: # if board is not tilted
+            tilt=0 #set tilt to 0
+        datalog.write(f"{t},{x},{y},{z},{tilt}\n") #add all above data to the csv
+        if(tilt is 1): #turn LED on if tilted
+            redLed.value=True 
+        else: #turn LED off otherwise
             redLed.value=False
-        led.value = True
-        time.sleep(0.1)
+        led.value = True #blink onboard light
+        time.sleep(0.1) #wait 0.1 seconds
         led.value = False
-        datalog.flush()
-        time.sleep(0.25)
+        datalog.flush() #saves data to file
+        time.sleep(0.25) #wait 0.25 seconds
