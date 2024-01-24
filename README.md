@@ -338,6 +338,7 @@ The object of this assignment was to use a PiCO board to collect and store accel
 
 ### Evidence 
 ![Data 1](images/data_1.png)
+CSV of acceleration values
 ### Wiring
 
 ![Storage_Diagram](images/storage_diagram.png)
