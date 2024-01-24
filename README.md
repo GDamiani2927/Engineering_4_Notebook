@@ -189,8 +189,8 @@ The purpose of this assignment was to create a beam that can withstand enough we
 
 ### Part Image
 
-![Beam](images/Beam Starter + Holder.png) 
-![Beam](images/Beam Starter + Holder (1).png)  
+![Beam](images/original_beam.png) 
+![Beam](images/original_beam_side.png)  
 
 ### Reflection
 
